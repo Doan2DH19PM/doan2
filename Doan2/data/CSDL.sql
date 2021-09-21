@@ -1,0 +1,85 @@
+CREATE TABLE khachhang (
+    ID INT  NOT NULL,
+    HoTen NVARCHAR(255) NOT NULL,
+    DiaChi NVARCHAR(255) NOT NULL,
+    SDT char(100) NOT NULL,
+    NgaySinh DATETIME NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE nhanvien(
+    ID INT  NOT NULL,
+    ChucVu INT NOT NULL,
+    HoTen NVARCHAR(255) NOT NULL,
+    DiaChi NVARCHAR(255) NOT NULL,
+    SDT NVARCHAR(255) NOT NULL,
+    NgaySinh NVARCHAR(255) NOT NULL,
+    Phai NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID),
+    CONSTRAINT CHK_CHUCVU CHECK (CHUCVU IN (0,1))
+);
+CREATE TABLE loaive(
+    ID INT  NOT NULL,
+    TenLV NVARCHAR(255) NOT NULL,
+    DonGia NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE phongchieuphim(
+    ID INT  NOT NULL,
+    TenPhong NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE ve(
+    ID INT  NOT NULL,
+    LoaiVe_ID INT NOT NULL,
+    NhanVien_ID INT NOT NULL,
+    KhachHang_ID INT NOT NULL,
+    Ghe INT NOT NULL,
+    NgayBanVe DATETIME,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (LoaiVe_ID) REFERENCES loaive(ID),
+    FOREIGN KEY (NhanVien_ID) REFERENCES nhanvien(ID),
+    FOREIGN KEY (KhachHang_ID) REFERENCES khachhang(ID)
+);
+CREATE TABLE dangphim(
+    ID INT NOT NULL,
+    DANGPHIM NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+CREATE TABLE loaiphim(
+    ID INT NOT NULL,
+    LoaiPhim NVARCHAR(255) NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE TABLE phim (
+    ID INT  NOT NULL,
+    LoaiPhim_ID INT NOT NULL,
+    DangPhim_ID INT NOT NULL,
+    TenPhim NVARCHAR(255) NOT NULL,
+    NSX DATETIME NOT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (LoaiPhim_ID) REFERENCES loaiphim(ID),
+    FOREIGN KEY (DangPhim_ID) REFERENCES dangphim(ID)
+);
+CREATE TABLE binhluan(
+    ID INT NOT NULL,
+    Phim_ID INT NOT NULL,
+    KhachHang_ID INT NOT NULL,
+    NoiDung NVARCHAR(500) NULL,
+    NgayDang DATETIME NOT NULL,
+    KiemDuyet TINYINT NOT NULL, 
+    PRIMARY KEY (ID),
+    FOREIGN KEY (Phim_ID) REFERENCES phim(ID),
+    FOREIGN KEY (KhachHang_ID) REFERENCES khachhang(ID)
+);
+CREATE TABLE chitietchieuphim(
+    ID INT  NOT NULL,
+    Ve_ID INT NOT NULL,
+    PhongCP_ID INT NOT NULL,
+    Phim_ID INT NOT NULL,
+    XuatChieu DATETIME,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (Ve_ID) REFERENCES ve(ID),
+    FOREIGN KEY (PhongCP_ID) REFERENCES phongchieuphim(ID),
+    FOREIGN KEY (Phim_ID) REFERENCES phim(ID)
+);
