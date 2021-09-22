@@ -10,35 +10,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Tin mới nhât</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Đăng nhập</a>
+              <a class="nav-link active" aria-current="page" href="#">Phim mới nhât</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Chuyên mục
+                Góc điện ảnh
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Thể loại phim</a></li>
+                <li><a class="dropdown-item" href="#">Dạng phim</a></li>
+                <li><a class="dropdown-item" href="#">Loại phim</a></li>
+                <li><a class="dropdown-item" href="#">Bình luận phim</a></li>
               </ul>
-            </li>
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Quản lý
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="chude.php">Chủ đề</a></li>
-                <li><a class="dropdown-item" href="nguoidung.php">Người dùng</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="baiviet.php">Bài viết</a></li>
-              </ul>
+              <li class="nav-item">
+              <a class="nav-link" href="#">Mua vé</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Đăng xuất</a>
+              <a class="nav-link" href="#">Hỗ trợ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Thành Viên</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Đăng xuất</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Đăng nhập</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -49,5 +46,4 @@
         </div>
         
       </nav>
-      
      

@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-     <?php include_once "navbar.php"; ?>
+     <?php include_once "navbar_admin.php"; ?>
       <div class="card mt-3">
       <h5 class="card-header">Trang chủ Admin</h5>
       <div class="card-body">
